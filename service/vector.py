@@ -1,5 +1,4 @@
 import os
-
 from openai import OpenAI
 
 
@@ -7,7 +6,7 @@ class Vector(object):
     MODEL = "text-embedding-ada-002"
 
     def __init__(self):
-        self.openaiClient = None
+        self.openai_client = None
 
     # given a value, get the embedding for the value
     def embed(self, val):
@@ -20,7 +19,7 @@ class Vector(object):
 
     # instantiate an openai client
     def __get_client(self):
-        if self.openaiClient is None:
+        if self.openai_client is None:
             key = os.environ.get('OPENAI_API_KEY')
             if key is None:
                 raise Exception("Missing openai api key")
@@ -29,6 +28,6 @@ class Vector(object):
             if org_id is None:
                 raise Exception("Missing openai api key")
 
-            self.openaiClient = OpenAI(api_key=key, organization=org_id)
+            self.openai_client = OpenAI(api_key=key, organization=org_id)
 
-        return self.openaiClient
+        return self.openai_client
