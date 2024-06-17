@@ -16,3 +16,7 @@ fastapi dev main.py (dev mode)
 
 # Swagger Docs
 http://127.0.0.1:8000/docs
+
+# Additional References
+https://dev.to/fuadrafid/fastapi-the-good-the-bad-and-the-ugly-20ob
+

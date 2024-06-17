@@ -9,7 +9,7 @@ class Vector(object):
         self.openai_client = None
 
     # given a value, get the embedding for the value
-    def embed(self, val):
+    async def embed(self, val):
       client = self.__get_client()
       response = client.embeddings.create(
         input=val,

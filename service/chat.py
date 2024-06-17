@@ -23,7 +23,7 @@ class Chat(object):
     def create_user_message(self, content):
         return {"role": "user", "content": f"{content}"}
 
-    def submit(self, question, search_results):
+    async def submit(self, question, search_results):
         client = self.__get_client()
         messages = [self.create_system_message(search_results), self.create_user_message(question)]
 

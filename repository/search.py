@@ -7,7 +7,7 @@ class Search(object):
     def __init__(self):
         self.pinecone_client = None
 
-    def query(self, v):
+    async def query(self, v):
         client = self.__get_client()
         index = client.Index("animals")
         search_results = index.query(namespace="animals", vector=v, top_k=3, include_values=False, include_metadata=True)
